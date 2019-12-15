@@ -20,6 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('site')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->string('contact_name')->nullable();
         });
     }
 

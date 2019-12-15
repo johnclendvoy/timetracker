@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+
+    public function index()
+    {
+        $clients = Client::all();
+        return view('tasks.index')->with([
+            'clients' => $clients
+        ]);
+        
+    }
+
     public function create()
     {
         $clients = Client::all();
@@ -23,7 +33,7 @@ class TaskController extends Controller
             'description' => 'nullable',
             'client_id' => 'required|exists:clients,id',
             'date' => 'required',
-            'hours' => 'required|numeric'
+            'minutes' => 'required|integer'
         ]);
         $task = Task::create($request->all());
         $request->session()->flash('id', $task->id);
