@@ -1,93 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
 
-        <title>Timetracker</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet"> 
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #fff;
-                font-family: 'Alata', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .green {
-                color:mediumseagreen;
-            }
-
-            .red {
-                color:firebrick;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-            }
-
-            .content {
-                text-align: center;
-                background-color:orange;
-                padding-right:2em;
-                padding-left:2em;
-                border-radius: 50%;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-            select {
-                appearance: none;
-                -webkit-appearance: none;
-            }
-            input, select {
-                border:none;
-                border-radius: 3px;
-                padding-top:0.5em;
-                padding-bottom:0.5em;
-            }
-
-            .button {
-                border:none;
-                border-radius: 3px;
-                color:orange;
-                padding:0.5em 1em;
-                font-size: 1em;
-                font-weight: 700;
-            }
-            .button:hover {
-                color:coral;
-            }
-
-            nav a {
-                color:slategrey
-            }
-
-        </style>
-    </head>
-    <body>
-        <nav>
-            <a href="/data">Data</a>
-            {{-- <a href="/clients">Add Client</a> --}}
-        </nav>
+@section('content')
         <div class="flex-center full-height">
 
-            <div class="content m-b-md">
-                <h1>Egg Tracker</h1>
+            <div class="yellow-circle m-b-md">
+                <h1>Time Tracker</h1>
                 <form action="/task" method="post">
                     @csrf
                     <div class="m-b-md">
@@ -134,5 +51,4 @@
                 @endif
             </div>
         </div>
-    </body>
-</html>
+@endsection
