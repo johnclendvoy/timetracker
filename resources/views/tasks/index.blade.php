@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="flex-center full-height">
+    <div class="flex-center">
         @foreach($clients as $client)
             <div class="blue-rect m-b-md text-left">
                 <h2>{{$client->name}}</h2>

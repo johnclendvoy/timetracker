@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
     public function getHoursAttribute() {
-        return $this->tasks->sum('minutes') / 60;
+        $hours = $this->tasks->sum('minutes') / 60;
+        return number_format($hours, 2);
     }
 
     public function tasks() {
